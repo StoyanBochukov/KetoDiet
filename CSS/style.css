@@ -15,6 +15,7 @@
     --bg-posts: rgb(69, 68, 68);
     --bg-hr: #eee;
     --bg-footer-logo: rgb(32, 29, 52);
+    --header-border: rgba(94, 91, 91, 0.226);
     
     --ff-primary: 'Roboto', sans-serif;
 
@@ -26,6 +27,7 @@
     --bg-body:rgb(32, 29, 52);
     --bg-posts: #fff;
     --bg-hr: #fff
+    --header-border: rgba(252, 203, 203, 0.1);
 }
 .sections-title{
     margin-top: 50px;
@@ -50,7 +52,7 @@ section{
     font-family: var(--ff-primary);
 }
 header{
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--header-border);
     position: relative;
 }
 .desktop-main-menu{
@@ -113,7 +115,7 @@ header{
     padding: 4rem;
     width: 260px;
     height: 100%;
-    border: 1px solid #ccc;
+    border-right: .5px solid #eee;
     background-color: var(--bg-body);
     z-index: 10;
     transform: translateX(-110%);
