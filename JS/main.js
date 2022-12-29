@@ -1,15 +1,13 @@
-const dropDown = document.querySelector('.drop-down');
-const dropDownMobile = document.querySelector('.drop-down-mobile')
-const dropDownList = document.querySelector('.drop-down_list');
-const dropDownListMobile = document.querySelector('.drop-down_list-mobile')
 const selected = document.querySelector('.selected');
 const selectedImg = document.querySelector('.selectedImg');
-const hamburger = document.getElementById('menu-open')
-const closeMenu = document.querySelector('.close')
-const mobileMenu = document.querySelector('.nav-mobile')
-const themeSwitch = document.getElementById('themeSwitch')
-const themeSwitchMobile = document.getElementById('themeSwitch-mobile')
-const body = document.querySelector('body')
+const hamburger = document.getElementById('menu-open');
+const closeMenu = document.querySelector('.close');
+const mobileMenu = document.querySelector('.nav-mobile');
+const buttons = document.querySelectorAll('[data-carousel-button]');
+const dropDowns = document.querySelectorAll('[data-language-drop]');
+const dropList = document.querySelectorAll('[data-drop-menu]');
+const themeSwitch = document.querySelectorAll('[data-theme-button]');
+
 
 hamburger.addEventListener('click', ()=>{
     mobileMenu.classList.toggle('menu-open')
@@ -17,27 +15,39 @@ hamburger.addEventListener('click', ()=>{
 closeMenu.addEventListener('click', () => {
     mobileMenu.classList.remove('menu-open')
 })
-dropDown.addEventListener('click', () => {
-    dropDownList.classList.toggle('drop-down-open')
-})
-dropDownMobile.addEventListener('click', () => {
-    dropDownListMobile.classList.toggle('drop-down-open')
+
+dropDowns.forEach(drop =>{
+    drop.addEventListener('click', () => {
+        dropList.forEach(list => {
+            list.classList.toggle('drop-down-open')
+        })
+    })
 })
 
-//Slider
-const swiper = new Swiper(".mySwiper", {
-    
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
+
+//Custom Slider
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        const offset = button.dataset.carouselButton === "next" ? 1 : -1;
+        const slides = button.closest("[data-carousel]").querySelector("[data-slides]")
+        const activeSlide = slides.querySelector('[data-active]')
+        let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+        if(newIndex < 0){
+            newIndex = slides.children.length -1
+        }
+        if(newIndex >= slides.children.length){
+            newIndex = 0
+        }
+        slides.children[newIndex].dataset.active = true
+        delete activeSlide.dataset.active
+    })
+})
 
  // Theme Color Personalize
-themeSwitch.addEventListener('click', () => {
-    document.body.classList.toggle('dark')
+themeSwitch.forEach(theme => {
+    theme.addEventListener('click', () => {
+        document.body.classList.toggle('dark')
+    })
 })
-themeSwitchMobile.addEventListener('click', () => {
-    document.body.classList.toggle('dark')
-})
+
 

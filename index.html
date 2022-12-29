@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./CSS/style.css">
     <script src="https://kit.fontawesome.com/eecd2b955c.js" crossorigin="anonymous" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" defer></script>
     <script src="./JS/main.js" defer></script>
     <title>Keto Diet</title>
 </head>
@@ -70,14 +69,14 @@
                     <li class="desktop-menu-item"><a href="#" class="desktop-menu-link">Home</a></li>
                     <li class="desktop-menu-item"><a href="#" class="desktop-menu-link">Blog</a></li>
                 </ul>
-                <div class="drop-down">
+                <div class="drop-down" data-language-drop>
                     <div class="wrapper">
                         <img src="./images/us-flag.png" alt="" class="selectedImg">
                         <div class="selected">English</div>
                     </div>
                     <i class="fas fa-caret-down arrow"></i>
 
-                    <div class="drop-down_list">
+                    <div class="drop-down_list" data-drop-menu>
                         <div class="drop-down_list-item">
                             <img src="./images/us-flag.png" alt="">
                             <div class="list-item_text">English</div>
@@ -109,7 +108,7 @@
                     </div>
                 </div>
                 <label class="switch">
-                    <input id="themeSwitch" type="checkbox">
+                    <input id="themeSwitch" type="checkbox" data-theme-button>
                     <span class="switch-btn"></span>
                 </label>
             </div>
@@ -179,14 +178,14 @@
                 <li class="mobile-list"><a class="mobile-link" href="#">Home</a></li>
                 <li class="mobile-list"><a class="mobile-link" href="#">Blog</a></li>
             </ul>
-            <div class="drop-down-mobile">
+            <div class="drop-down" data-language-drop>
                 <div class="wrapper">
                     <img src="./images/us-flag.png" alt="" class="selectedImg">
                     <div class="selected">English</div>
                 </div>
                 <i class="fas fa-caret-down arrow"></i>
 
-                <div class="drop-down_list-mobile">
+                <div class="drop-down_list" data-drop-menu>
                     <div class="drop-down_list-item">
                         <img src="./images/us-flag.png" alt="">
                         <div class="list-item_text">English</div>
@@ -218,7 +217,7 @@
                 </div>
             </div>
             <label class="switch">
-                <input id="themeSwitch-mobile" type="checkbox">
+                <input id="themeSwitch" type="checkbox" data-theme-button>
                 <span class="switch-btn"></span>
             </label>
         </div>
@@ -316,37 +315,41 @@
                 Clients about us
             </h1>
 
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="slide-wrapper">
-                            <div class="slide-img">
-                                <img src="./images/clietn1.jpg" alt="">
+            <!-- Custom Slider -->
+            <div aria-label="testimonials">
+                <div class="carousel" data-carousel>
+                    <button class="carousel-button prev" data-carousel-button="prev">&#8249;</button>
+                    <button class="carousel-button next" data-carousel-button="next">&#8250;</button>
+                    <ul data-slides>
+                        <li class="slide" data-active>
+                            <div class="slide-wrapper">
+                                <div class="slide-img">
+                                    <img src="./images/clietn1.jpg" alt="">
+                                </div>
+                                <p>
+                                    The superb and fantastic meal plan at such a reasonable price! Honestly,
+                                    I can not complain at all. Highly recommend it to anyone who is looking
+                                    to gain muscles!
+                                </p>
                             </div>
-                            <p>
-                                The superb and fantastic meal plan at such a reasonable price! Honestly,
-                                I can not complain at all. Highly recommend it to anyone who is looking
-                                to gain muscles!
-                            </p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-wrapper">
-                            <div class="slide-img">
-                                <img src="./images/client2.jpg" alt="">
+                        </li>
+                        <li class="slide">
+                            <div class="slide-wrapper">
+                                <div class="slide-img">
+                                    <img src="./images/client2.jpg" alt="">
+                                </div>
+                                <p>
+                                    I've tried so many diets and meal plans,
+                                    but they were useless. This Keto meal plan is so easy
+                                    to follow. So far I've been on this program for one month,
+                                    and I've lost 15 pounds. I can't wait to see my progress
+                                    at the end. For anyone considering to start this meal plan, it's definitely worth a
+                                    go!!
+                                </p>
                             </div>
-                            <p>
-                                I've tried so many diets and meal plans,
-                                but they were useless. This Keto meal plan is so easy
-                                to follow. So far I've been on this program for one month,
-                                and I've lost 15 pounds. I can't wait to see my progress
-                                at the end. For anyone considering to start this meal plan, it's definitely worth a go!!
-                            </p>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="swiper-button-next swiper-btn"></div>
-                <div class="swiper-button-prev swiper-btn"></div>
             </div>
         </section>
         <section class="newsletter">
